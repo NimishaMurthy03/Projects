@@ -5,9 +5,9 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    def targetDir = "/your/target/folder"
+                    def targetDir = "C:\Users\Monisha\jenkins"
                     sh "rm -rf ${targetDir} && mkdir -p ${targetDir}"
-                    sh "git clone --branch develop https://github.com/your-username/your-repo.git ${targetDir}"
+                    sh "git clone --branch develop https:https://github.com/NimishaMurthy03/Projects ${targetDir}"
                 }
             }
         }

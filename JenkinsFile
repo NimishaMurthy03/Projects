@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                script {
+                    def targetDir = "${env.WORKSPACE}"
+                    sh "rm -rf ${targetDir} && mkdir -p ${targetDir}"
+                    sh "git clone --branch develop https://github.com/NimishaMurthy03/Projects.git ${targetDir}"
+                }
+            }
+        }
+        stage('List Files') {
+            steps {
+                sh "ls -la ${env.WORKSPACE}"
+            }
+        }
+    }
+}
